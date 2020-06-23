@@ -14,10 +14,7 @@ const ArtistQuestionScreen = (props) => {
       <h2 className="game__title">Кто исполняет эту песню?</h2>
       <div className="game__track">
         <div className="track">
-          <button className="track__button track__button--play" type="button" />
-          <div className="track__status">
-            {renderPlayer(song.src, 0)}
-          </div>
+          {renderPlayer(song.src, 0)}
         </div>
       </div>
 
@@ -39,7 +36,7 @@ const ArtistQuestionScreen = (props) => {
       </form>
     </section>
   );
-}
+};
 
 ArtistQuestionScreen.propTypes = {
   onAnswer: PropTypes.func.isRequired,
