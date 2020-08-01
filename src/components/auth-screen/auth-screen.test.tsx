@@ -3,7 +3,6 @@ import * as renderer from "react-test-renderer";
 import AuthScreen from "./auth-screen";
 import {noop} from "../../utils";
 
-const noop = () => {};
 
 it(`AuthScreen component render correctly`, () => {
   const tree = renderer.create(

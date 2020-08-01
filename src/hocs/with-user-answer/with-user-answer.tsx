@@ -21,7 +21,7 @@ interface InjectedProps {
 type Answer = boolean[];
 
 const withUserAnswer = (Component) => {
-    // Так же, как и в `with-active-player`,
+  // Так же, как и в `with-active-player`,
   // только добавляем пропсы, которые нужны самому хоку.
   type P = React.ComponentProps<typeof Component>;
   type T = Props & Subtract<P, InjectedProps>;

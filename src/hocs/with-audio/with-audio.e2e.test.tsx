@@ -24,13 +24,19 @@ const Player = (props: PlayerProps) => {
 
 it(`Checks that HOC's callback turn on audio (play)`, () => {
   const PlayerWrapped = withAudio(Player);
+  let isPlaying = false;
+  const onPlayButtonClick = jest.fn(() => {
+    isPlaying = !isPlaying;
+    wrapper.setProps({isPlaying});
+  });
+
   const wrapper = mount(<PlayerWrapped
-    isPlaying={false}
-    onPlayButtonClick={noop}
+    isPlaying={isPlaying}
+    onPlayButtonClick={onPlayButtonClick}
     src=""
   />);
 
-  window.HTMLMediaElement.prototype.play = () => Promise.resolve();;
+  window.HTMLMediaElement.prototype.play = () => Promise.resolve();
 
   const {audioRef} = wrapper.instance();
 
@@ -41,13 +47,21 @@ it(`Checks that HOC's callback turn on audio (play)`, () => {
   wrapper.find(`button`).simulate(`click`);
 
   expect(audioRef.current.play).toHaveBeenCalledTimes(1);
+  expect(onPlayButtonClick).toHaveBeenCalledTimes(1);
+  expect(wrapper.props().isPlaying).toEqual(true);
 });
 
 it(`Checks that HOC's callback turn off audio (pause)`, () => {
   const PlayerWrapped = withAudio(Player);
+  let isPlaying = true;
+  const onPlayButtonClick = jest.fn(() => {
+    isPlaying = !isPlaying;
+    wrapper.setProps({isPlaying});
+  });
+
   const wrapper = mount(<PlayerWrapped
-    isPlaying={true}
-    onPlayButtonClick={noop}
+    isPlaying={isPlaying}
+    onPlayButtonClick={onPlayButtonClick}
     src=""
   />);
 
@@ -62,4 +76,6 @@ it(`Checks that HOC's callback turn off audio (pause)`, () => {
   wrapper.find(`button`).simulate(`click`);
 
   expect(audioRef.current.pause).toHaveBeenCalledTimes(1);
+  expect(onPlayButtonClick).toHaveBeenCalledTimes(1);
+  expect(wrapper.props().isPlaying).toEqual(false);
 });

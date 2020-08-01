@@ -10,8 +10,7 @@ it(`Click by Play button calls callback`, () => {
   const wrapper = shallow(<AudioPlayer
     isLoading={false}
     isPlaying={false}
-    onPlayButtonClick={handlePlayButtonClick}
-    >
+    onPlayButtonClick={handlePlayButtonClick}>
     <audio />
   </AudioPlayer>);
 

@@ -6,7 +6,7 @@ interface Props {
   onReplayButtonClick: () => void;
 }
 
-class AuthScreen extends React.PureComponent<Props, {}> {
+class AuthScreen extends React.PureComponent<Props, null> {
   private loginRef: React.RefObject<HTMLInputElement>;
   private passwordRef: React.RefObject<HTMLInputElement>;
 

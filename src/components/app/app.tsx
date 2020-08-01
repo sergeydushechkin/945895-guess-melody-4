@@ -39,7 +39,7 @@ type Question = QuestionArtist | QuestionGenre;
 const GenreQuestionScreenWrapped = withActivePlayer(withUserAnswer(GenreQuestionScreen));
 const ArtistQuestionScreenWrapped = withActivePlayer(ArtistQuestionScreen);
 
-class App extends React.PureComponent<Props, {}> {
+class App extends React.PureComponent<Props, null> {
   _renderGameScreen() {
     const {
       authorizationStatus,

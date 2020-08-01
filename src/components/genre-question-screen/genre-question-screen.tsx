@@ -10,7 +10,7 @@ interface Props {
   userAnswers: boolean[];
 }
 
-class GenreQuestionScreen extends React.PureComponent<Props, {}> {
+class GenreQuestionScreen extends React.PureComponent<Props, null> {
   render() {
     const {
       onAnswer,
