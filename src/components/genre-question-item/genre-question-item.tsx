@@ -1,7 +1,7 @@
-import React, {PureComponent} from "react";
-import PropTypes from "prop-types";
+import * as React from "react";
+import * as PropTypes from "prop-types";
 
-class GenreQuestionItem extends PureComponent {
+class GenreQuestionItem extends React.PureComponent {
   render() {
     const {answer, id, onChange, renderPlayer, userAnswer} = this.props;
 
