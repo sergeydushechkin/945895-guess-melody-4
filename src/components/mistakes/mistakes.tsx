@@ -1,5 +1,4 @@
-import * as React from "react";
-import * as PropTypes from "prop-types";
+import * as React from "react";;
 
 
 const Mistakes = (props) => {
@@ -13,7 +12,6 @@ const Mistakes = (props) => {
     </div>
   );
 };
-Mistakes.propTypes = {
-  count: PropTypes.number.isRequired,
-};
+
+
 export default Mistakes;

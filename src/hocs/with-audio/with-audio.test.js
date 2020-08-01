@@ -1,6 +1,5 @@
 import * as React from "react";
 import renderer from "react-test-renderer";
-import * as PropTypes from "prop-types";
 import withAudio from "./with-audio";
 
 const MockComponent = (props) => {
@@ -13,12 +12,6 @@ const MockComponent = (props) => {
   );
 };
 
-MockComponent.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]).isRequired,
-};
 
 const MockComponentWrapped = withAudio(MockComponent);
 

@@ -1,5 +1,4 @@
 import * as React from "react";
-import * as PropTypes from "prop-types";
 
 const withAudio = (Component) => {
   class WithAudio extends React.PureComponent {
@@ -81,12 +80,6 @@ const withAudio = (Component) => {
       );
     }
   }
-
-  WithAudio.propTypes = {
-    isPlaying: PropTypes.bool.isRequired,
-    onPlayButtonClick: PropTypes.func.isRequired,
-    src: PropTypes.string.isRequired,
-  };
 
   return WithAudio;
 };

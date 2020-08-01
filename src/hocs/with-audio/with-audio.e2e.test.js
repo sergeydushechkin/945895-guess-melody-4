@@ -1,5 +1,4 @@
 import * as React from "react";
-import * as PropTypes from "prop-types";
 import {configure, mount} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import withAudio from "./with-audio";
@@ -16,13 +15,6 @@ const Player = (props) => {
   );
 };
 
-Player.propTypes = {
-  onPlayButtonClick: PropTypes.func.isRequired,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]).isRequired,
-};
 
 it(`Checks that HOC's callback turn on audio (play)`, () => {
   const PlayerWrapped = withAudio(Player);
